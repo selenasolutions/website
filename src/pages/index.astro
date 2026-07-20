@@ -1,0 +1,399 @@
+---
+const title = 'Selena Solutions — IT solutions for commerce and content';
+const description =
+  'Independent IT consultancy building ecommerce platforms, refactoring legacy web apps, and shipping production SaaS. Maker of FireFilm.io.';
+const email = 'hello@selenasolutions.com';
+
+const services = [
+  {
+    name: 'Ecommerce solutions',
+    body: 'Storefronts, checkout, payments and inventory that survive a traffic spike. Shopify, headless, or built from scratch when the platform gets in the way.',
+    points: ['Storefront + checkout builds', 'Payment and fulfilment integrations', 'Migrations off legacy carts'],
+  },
+  {
+    name: 'Website refactoring',
+    body: 'Slow, fragile, or unmaintainable sites brought back under control. Same product, faster and cheaper to run.',
+    points: ['Performance and Core Web Vitals', 'Framework migrations', 'Dependency and security cleanup'],
+  },
+  {
+    name: 'Product engineering',
+    body: 'Full-stack builds from idea to production. Design, ship, measure, iterate — with someone who has run their own product.',
+    points: ['SaaS and internal tools', 'API and integration work', 'Cloud infra on Cloudflare and friends'],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href="https://selenasolutions.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://selenasolutions.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+
+  <body>
+    <header class="bar">
+      <a class="wordmark" href="/">Selena Solutions</a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a class="cta" href={`mailto:${email}`}>Get in touch</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Independent IT consultancy</p>
+        <h1>Software that earns its keep.</h1>
+        <p class="lede">
+          I build ecommerce systems, rescue tangled codebases, and ship products end to end.
+          One engineer, no account managers, no handoff to a junior team.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href={`mailto:${email}`}>Start a conversation</a>
+          <a class="btn" href="#services">See what I do</a>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <h2>Services</h2>
+        <div class="grid">
+          {
+            services.map((s) => (
+              <article class="card">
+                <h3>{s.name}</h3>
+                <p>{s.body}</p>
+                <ul>
+                  {s.points.map((p) => (
+                    <li>{p}</li>
+                  ))}
+                </ul>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="work" class="section">
+        <h2>Work</h2>
+        <article class="feature">
+          <p class="eyebrow">My product</p>
+          <h3>FireFilm.io</h3>
+          <p>
+            A video post-production collaboration platform. Teams upload video and graphics, then
+            comment, revise and approve in one place instead of across a dozen email threads.
+            Built and run by me, from the database to the billing page.
+          </p>
+          <p class="muted">A member company of the HKSTP Incubation Programme.</p>
+          <a class="btn" href="https://firefilm.io" target="_blank" rel="noopener">Visit FireFilm.io</a>
+        </article>
+      </section>
+
+      <section id="about" class="section">
+        <h2>About</h2>
+        <div class="prose">
+          <p>
+            Selena Solutions is a sole trader practice. You talk to the person writing the code,
+            which means fewer meetings, faster decisions, and estimates that come from someone who
+            has to live with them.
+          </p>
+          <p>
+            Running FireFilm keeps me honest: I ship, support and pay for production software of my
+            own, so I know which shortcuts cost you later.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <h2>Let's talk</h2>
+        <p>
+          Tell me what you're building or what's broken. I'll reply with a straight answer about
+          whether I can help.
+        </p>
+        <a class="btn primary" href={`mailto:${email}`}>{email}</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; {new Date().getFullYear()} Selena Solutions</p>
+      <p><a href={`mailto:${email}`}>{email}</a></p>
+    </footer>
+
+    <style>
+      :root {
+        --bg: #0c0d10;
+        --surface: #14161b;
+        --line: #24272f;
+        --text: #e8eaed;
+        --muted: #9aa1ad;
+        --accent: #ff5b2e;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin: 0;
+      }
+
+      main,
+      .bar,
+      footer {
+        max-width: 68rem;
+        margin-inline: auto;
+        padding-inline: 1.5rem;
+      }
+
+      .bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-block: 1.25rem;
+        flex-wrap: wrap;
+      }
+
+      .wordmark {
+        font-weight: 650;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        font-size: 0.9375rem;
+      }
+
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        color: var(--text);
+      }
+
+      nav .cta {
+        color: var(--text);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0.4rem 0.9rem;
+      }
+
+      nav .cta:hover {
+        border-color: var(--accent);
+      }
+
+      .hero {
+        padding-block: 6rem 5rem;
+        max-width: 46rem;
+      }
+
+      .eyebrow {
+        margin: 0 0 1rem;
+        font-size: 0.8125rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 7vw, 4.25rem);
+        font-weight: 660;
+      }
+
+      .lede {
+        margin: 1.5rem 0 0;
+        font-size: 1.1875rem;
+        color: var(--muted);
+        max-width: 38rem;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 2.5rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.7rem 1.25rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 0.9375rem;
+        font-weight: 500;
+        transition:
+          border-color 0.15s,
+          background 0.15s;
+      }
+
+      .btn:hover {
+        border-color: var(--muted);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+
+      .btn.primary:hover {
+        background: #ff7047;
+        border-color: #ff7047;
+      }
+
+      .section {
+        padding-block: 4.5rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .section h2 {
+        font-size: 0.8125rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 2.5rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 1.75rem;
+      }
+
+      .card h3 {
+        font-size: 1.1875rem;
+      }
+
+      .card p {
+        color: var(--muted);
+        font-size: 0.9375rem;
+      }
+
+      .card ul {
+        margin: 1.25rem 0 0;
+        padding: 0;
+        list-style: none;
+        font-size: 0.875rem;
+        color: var(--muted);
+      }
+
+      .card li {
+        padding-left: 1.1rem;
+        position: relative;
+        margin-bottom: 0.4rem;
+      }
+
+      .card li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.62em;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      .feature {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 2.5rem;
+        max-width: 42rem;
+      }
+
+      .feature h3 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature p {
+        color: var(--muted);
+      }
+
+      .feature .btn {
+        margin-top: 1rem;
+      }
+
+      .muted {
+        font-size: 0.875rem;
+      }
+
+      .prose {
+        max-width: 38rem;
+        color: var(--muted);
+      }
+
+      .contact p {
+        color: var(--muted);
+        max-width: 34rem;
+        margin-bottom: 2rem;
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding-block: 2.5rem;
+        border-top: 1px solid var(--line);
+        font-size: 0.875rem;
+        color: var(--muted);
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </body>
+</html>
