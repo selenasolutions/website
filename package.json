@@ -1,5 +1,5 @@
 {
-  "name": "tmp",
+  "name": "selenasolutions-website",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -15,5 +15,6 @@
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
     "astro": "^7.1.2"
-  }
+  },
+  "private": true
 }
