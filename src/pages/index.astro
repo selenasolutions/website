@@ -1,24 +1,50 @@
 ---
-const title = 'Selena Solutions — IT solutions for commerce and content';
+import '@fontsource-variable/plus-jakarta-sans';
+
+const title = 'Selena Solutions — good software, zero drama';
 const description =
-  'Independent IT consultancy building ecommerce platforms, refactoring legacy web apps, and shipping production SaaS. Maker of FireFilm.io.';
+  'Independent IT consultancy building ecommerce platforms, untangling legacy websites, and shipping production SaaS. Maker of FireFilm.io.';
 const email = 'hello@selenasolutions.com';
 
 const services = [
   {
-    name: 'Ecommerce solutions',
-    body: 'Storefronts, checkout, payments and inventory that survive a traffic spike. Shopify, headless, or built from scratch when the platform gets in the way.',
-    points: ['Storefront + checkout builds', 'Payment and fulfilment integrations', 'Migrations off legacy carts'],
+    name: 'Ecommerce that sells',
+    body: "Storefronts, checkout and stock that don't fall over on your best day of the year. Shopify, headless, or hand-built when the platform starts arguing.",
+    points: ['Storefront and checkout builds', 'Payments and fulfilment', 'Escape from a legacy cart'],
+    tint: 'grape',
+    icon: 'M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z',
   },
   {
-    name: 'Website refactoring',
-    body: 'Slow, fragile, or unmaintainable sites brought back under control. Same product, faster and cheaper to run.',
-    points: ['Performance and Core Web Vitals', 'Framework migrations', 'Dependency and security cleanup'],
+    name: 'Website rescue',
+    body: 'Slow, creaky or held together with hope. I untangle it, speed it up, and leave something your next developer will not swear at.',
+    points: ['Speed and Core Web Vitals', 'Framework migrations', 'Dependency and security cleanup'],
+    tint: 'mint',
+    icon: 'M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437',
   },
   {
-    name: 'Product engineering',
-    body: 'Full-stack builds from idea to production. Design, ship, measure, iterate — with someone who has run their own product.',
-    points: ['SaaS and internal tools', 'API and integration work', 'Cloud infra on Cloudflare and friends'],
+    name: 'Products, start to finish',
+    body: 'You have an idea and a spreadsheet full of hopes. I turn it into something real, in production, that people can pay for.',
+    points: ['SaaS and internal tools', 'APIs and integrations', 'Cloud infrastructure and deploys'],
+    tint: 'bubble',
+    icon: 'M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5',
+  },
+];
+
+const process = [
+  {
+    step: '01',
+    name: 'We have a chat',
+    body: 'You tell me the problem. I ask annoying questions. You get a written plan with real numbers, including the parts I would talk you out of.',
+  },
+  {
+    step: '02',
+    name: 'You see it early',
+    body: 'Working software in front of you within weeks, not a three-month silence followed by a dramatic reveal and an invoice.',
+  },
+  {
+    step: '03',
+    name: 'It becomes yours',
+    body: 'Documented, deployable, no secret knowledge locked in my head. Keep me around because you want to, not because you have to.',
   },
 ];
 ---
@@ -30,6 +56,7 @@ const services = [
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#FFFBF5" />
     <link rel="canonical" href="https://selenasolutions.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -39,36 +66,75 @@ const services = [
   </head>
 
   <body>
+    <a class="skip" href="#main">Skip to content</a>
+
     <header class="bar">
-      <a class="wordmark" href="/">Selena Solutions</a>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a class="cta" href={`mailto:${email}`}>Get in touch</a>
-      </nav>
+      <div class="bar-inner">
+        <a class="wordmark" href="/">
+          <span class="mark" aria-hidden="true"></span>
+          Selena Solutions
+        </a>
+        <nav aria-label="Primary">
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#process">How it works</a>
+          <a class="btn primary small" href={`mailto:${email}`}>Say hello</a>
+        </nav>
+      </div>
     </header>
 
-    <main>
+    <main id="main">
       <section class="hero">
-        <p class="eyebrow">Independent IT consultancy</p>
-        <h1>Software that earns its keep.</h1>
+        <div class="blob blob-a" aria-hidden="true"></div>
+        <div class="blob blob-b" aria-hidden="true"></div>
+
+        <p class="pill"><span class="dot" aria-hidden="true"></span>Taking on new projects</p>
+        <h1>Good software.<br /><span class="hl">Zero drama.</span></h1>
         <p class="lede">
-          I build ecommerce systems, rescue tangled codebases, and ship products end to end.
-          One engineer, no account managers, no handoff to a junior team.
+          I build ecommerce systems, rescue websites that have seen things, and ship products end
+          to end. One engineer, no account managers, no mysterious junior team in another timezone.
         </p>
         <div class="actions">
-          <a class="btn primary" href={`mailto:${email}`}>Start a conversation</a>
-          <a class="btn" href="#services">See what I do</a>
+          <a class="btn primary big" href={`mailto:${email}`}>Start a conversation</a>
+          <a class="btn ghost big" href="#services">Show me the goods</a>
         </div>
       </section>
 
+      <section class="proof" aria-label="Credentials">
+        <dl>
+          <div>
+            <dt>Shipping since</dt>
+            <dd>2015</dd>
+          </div>
+          <div>
+            <dt>Own product, live</dt>
+            <dd>FireFilm.io</dd>
+          </div>
+          <div>
+            <dt>Incubation</dt>
+            <dd>HKSTP member</dd>
+          </div>
+          <div>
+            <dt>People between us</dt>
+            <dd>Zero</dd>
+          </div>
+        </dl>
+      </section>
+
       <section id="services" class="section">
-        <h2>Services</h2>
+        <div class="head">
+          <h2>Services</h2>
+          <p class="head-lede">Three things done properly, instead of ten things done adequately.</p>
+        </div>
         <div class="grid">
           {
             services.map((s) => (
-              <article class="card">
+              <article class={`card tint-${s.tint}`}>
+                <span class="ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d={s.icon} />
+                  </svg>
+                </span>
                 <h3>{s.name}</h3>
                 <p>{s.body}</p>
                 <ul>
@@ -83,42 +149,81 @@ const services = [
       </section>
 
       <section id="work" class="section">
-        <h2>Work</h2>
+        <div class="head">
+          <h2>Work</h2>
+          <p class="head-lede">I don't only build software for other people. I run my own, and it keeps me humble.</p>
+        </div>
         <article class="feature">
-          <p class="eyebrow">My product</p>
-          <h3>FireFilm.io</h3>
-          <p>
-            A video post-production collaboration platform. Teams upload video and graphics, then
-            comment, revise and approve in one place instead of across a dozen email threads.
-            Built and run by me, from the database to the billing page.
-          </p>
-          <p class="muted">A member company of the HKSTP Incubation Programme.</p>
-          <a class="btn" href="https://firefilm.io" target="_blank" rel="noopener">Visit FireFilm.io</a>
+          <div class="feature-body">
+            <p class="eyebrow">My product</p>
+            <h3>FireFilm.io</h3>
+            <p>
+              A video post-production collaboration platform. Teams upload video and graphics, then
+              comment, revise and approve in one place — instead of across fourteen email threads
+              and a group chat nobody reads. Built and run by me, from the database to the billing page.
+            </p>
+            <p class="muted">A member company of the HKSTP Incubation Programme.</p>
+            <a class="btn ghost" href="https://firefilm.io" target="_blank" rel="noopener">
+              Visit FireFilm.io
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17 17 7M9 7h8v8" />
+              </svg>
+            </a>
+          </div>
+          <ul class="feature-tags">
+            <li>Video collaboration</li>
+            <li>Approval workflows</li>
+            <li>Multi-tenant SaaS</li>
+            <li>Billing</li>
+          </ul>
         </article>
       </section>
 
+      <section id="process" class="section">
+        <div class="head">
+          <h2>How it works</h2>
+          <p class="head-lede">Hiring one person is a perfectly reasonable thing to be nervous about. Here's how that goes.</p>
+        </div>
+        <ol class="steps">
+          {
+            process.map((p) => (
+              <li>
+                <span class="num">{p.step}</span>
+                <h3>{p.name}</h3>
+                <p>{p.body}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
       <section id="about" class="section">
-        <h2>About</h2>
+        <div class="head">
+          <h2>About</h2>
+          <p class="head-lede">Small on purpose.</p>
+        </div>
         <div class="prose">
           <p>
-            Selena Solutions is a sole trader practice. You talk to the person writing the code,
-            which means fewer meetings, faster decisions, and estimates that come from someone who
-            has to live with them.
+            Selena Solutions is a sole trader practice, which is a formal way of saying you talk to
+            the person actually writing the code. Fewer meetings, faster decisions, and estimates
+            from someone who has to live with them.
           </p>
           <p>
-            Running FireFilm keeps me honest: I ship, support and pay for production software of my
-            own, so I know which shortcuts cost you later.
+            Running FireFilm keeps me honest. I ship, support and pay for production software of my
+            own, so I know exactly which shortcuts come back to bite you in month seven.
           </p>
         </div>
       </section>
 
-      <section id="contact" class="section contact">
-        <h2>Let's talk</h2>
-        <p>
-          Tell me what you're building or what's broken. I'll reply with a straight answer about
-          whether I can help.
-        </p>
-        <a class="btn primary" href={`mailto:${email}`}>{email}</a>
+      <section id="contact" class="contact">
+        <div class="contact-card">
+          <h2 class="contact-h">Let's talk.</h2>
+          <p>
+            Tell me what you're building, or what's on fire. You'll get a straight answer about
+            whether I can help — including the occasional cheerful no.
+          </p>
+          <a class="btn primary big" href={`mailto:${email}`}>{email}</a>
+        </div>
       </section>
     </main>
 
@@ -129,12 +234,27 @@ const services = [
 
     <style>
       :root {
-        --bg: #0c0d10;
-        --surface: #14161b;
-        --line: #24272f;
-        --text: #e8eaed;
-        --muted: #9aa1ad;
-        --accent: #ff5b2e;
+        --bg: #fffbf5;
+        --card: #ffffff;
+        --ink: #221b3d;
+        --muted: #635b7d;
+        --line: #ece6f5;
+        --line-strong: #dcd3ec;
+
+        --grape: #6b3ff0; /* 5.84:1 with white */
+        --grape-soft: #ede7ff;
+        --mint: #0f9b7d;
+        --mint-soft: #dff7ef;
+        --bubble: #d81b73;
+        --bubble-soft: #ffe6f0;
+        --lemon-soft: #fff3cc;
+
+        --r-sm: 12px;
+        --r-md: 18px;
+        --r-lg: 28px;
+
+        --shadow-sm: 0 1px 2px rgba(34, 27, 61, 0.04), 0 4px 12px rgba(34, 27, 61, 0.05);
+        --shadow-md: 0 2px 4px rgba(34, 27, 61, 0.04), 0 12px 28px rgba(34, 27, 61, 0.07);
       }
 
       *,
@@ -146,8 +266,10 @@ const services = [
       body {
         margin: 0;
         background: var(--bg);
-        color: var(--text);
-        font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+        color: var(--ink);
+        font-family: 'Plus Jakarta Sans Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+        font-size: 1rem;
+        line-height: 1.65;
         -webkit-font-smoothing: antialiased;
       }
 
@@ -158,32 +280,78 @@ const services = [
       h1,
       h2,
       h3 {
-        line-height: 1.15;
-        letter-spacing: -0.02em;
         margin: 0;
+        line-height: 1.14;
+        letter-spacing: -0.03em;
+        text-wrap: balance;
+      }
+
+      p {
+        text-wrap: pretty;
+      }
+
+      section[id] {
+        scroll-margin-top: 5.5rem;
       }
 
       main,
-      .bar,
-      footer {
+      footer,
+      .bar-inner {
         max-width: 68rem;
         margin-inline: auto;
         padding-inline: 1.5rem;
       }
 
+      .skip {
+        position: absolute;
+        left: -9999px;
+      }
+
+      .skip:focus {
+        left: 1rem;
+        top: 1rem;
+        z-index: 20;
+        background: var(--grape);
+        color: #fff;
+        padding: 0.6rem 1rem;
+        border-radius: var(--r-sm);
+        text-decoration: none;
+      }
+
+      /* ---------- header ---------- */
       .bar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: color-mix(in srgb, var(--bg) 85%, transparent);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .bar-inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
-        padding-block: 1.25rem;
         flex-wrap: wrap;
+        padding-block: 0.85rem;
       }
 
       .wordmark {
-        font-weight: 650;
-        letter-spacing: -0.02em;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-weight: 700;
+        letter-spacing: -0.025em;
         text-decoration: none;
+      }
+
+      .mark {
+        width: 1.1rem;
+        height: 1.1rem;
+        border-radius: 50% 50% 50% 6px;
+        background: linear-gradient(135deg, var(--grape), var(--bubble));
+        flex: none;
       }
 
       nav {
@@ -191,51 +359,158 @@ const services = [
         align-items: center;
         gap: 1.5rem;
         font-size: 0.9375rem;
+        font-weight: 500;
       }
 
-      nav a {
+      nav > a:not(.btn) {
         color: var(--muted);
         text-decoration: none;
+        transition: color 0.2s ease-out;
       }
 
-      nav a:hover {
-        color: var(--text);
+      nav > a:not(.btn):hover {
+        color: var(--ink);
       }
 
-      nav .cta {
-        color: var(--text);
-        border: 1px solid var(--line);
+      /* ---------- buttons ---------- */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        min-height: 44px;
+        padding: 0.65rem 1.3rem;
+        border: 1.5px solid transparent;
         border-radius: 999px;
-        padding: 0.4rem 0.9rem;
+        text-decoration: none;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease-out,
+          box-shadow 0.2s ease-out,
+          background 0.2s ease-out,
+          border-color 0.2s ease-out;
       }
 
-      nav .cta:hover {
-        border-color: var(--accent);
+      .btn.primary {
+        background: var(--grape);
+        color: #fff;
+        box-shadow: var(--shadow-sm);
       }
 
+      .btn.primary:hover {
+        background: #5a2fe0;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .btn.ghost {
+        background: var(--card);
+        border-color: var(--line-strong);
+        color: var(--ink);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .btn.ghost:hover {
+        border-color: var(--grape);
+        color: var(--grape);
+        transform: translateY(-2px);
+      }
+
+      .btn:active {
+        transform: translateY(0);
+      }
+
+      .btn.big {
+        font-size: 1rem;
+        padding: 0.9rem 1.7rem;
+      }
+
+      .btn.small {
+        min-height: 38px;
+        padding: 0.4rem 1rem;
+      }
+
+      .arrow {
+        width: 1em;
+        height: 1em;
+        flex: none;
+      }
+
+      /* ---------- hero ---------- */
       .hero {
-        padding-block: 6rem 5rem;
-        max-width: 46rem;
+        position: relative;
+        padding-block: 5.5rem 4.5rem;
+        max-width: 50rem;
       }
 
-      .eyebrow {
-        margin: 0 0 1rem;
-        font-size: 0.8125rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--accent);
+      .blob {
+        position: absolute;
+        z-index: -1;
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .blob-a {
+        width: 24rem;
+        height: 24rem;
+        top: -6rem;
+        right: -8rem;
+        background: var(--grape-soft);
+      }
+
+      .blob-b {
+        width: 20rem;
+        height: 20rem;
+        top: 8rem;
+        left: -10rem;
+        background: var(--bubble-soft);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin: 0 0 1.75rem;
+        padding: 0.4rem 1rem 0.4rem 0.8rem;
+        background: var(--card);
+        border: 1px solid var(--line-strong);
+        border-radius: 999px;
+        box-shadow: var(--shadow-sm);
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--muted);
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--mint);
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--mint) 18%, transparent);
+        flex: none;
       }
 
       .hero h1 {
-        font-size: clamp(2.5rem, 7vw, 4.25rem);
-        font-weight: 660;
+        font-size: clamp(2.75rem, 8vw, 5rem);
+        font-weight: 800;
+      }
+
+      .hl {
+        background: linear-gradient(120deg, var(--grape), var(--bubble));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
       }
 
       .lede {
         margin: 1.5rem 0 0;
         font-size: 1.1875rem;
         color: var(--muted);
-        max-width: 38rem;
+        max-width: 36rem;
       }
 
       .actions {
@@ -245,81 +520,163 @@ const services = [
         margin-top: 2.5rem;
       }
 
-      .btn {
-        display: inline-block;
-        padding: 0.7rem 1.25rem;
+      /* ---------- proof ---------- */
+      .proof {
+        padding: 2rem;
+        background: var(--card);
         border: 1px solid var(--line);
-        border-radius: 8px;
-        text-decoration: none;
-        font-size: 0.9375rem;
-        font-weight: 500;
-        transition:
-          border-color 0.15s,
-          background 0.15s;
+        border-radius: var(--r-lg);
+        box-shadow: var(--shadow-sm);
       }
 
-      .btn:hover {
-        border-color: var(--muted);
+      .proof dl {
+        display: grid;
+        gap: 1.5rem 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+        margin: 0;
       }
 
-      .btn.primary {
-        background: var(--accent);
-        border-color: var(--accent);
-        color: #fff;
+      .proof dt {
+        font-size: 0.75rem;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--muted);
       }
 
-      .btn.primary:hover {
-        background: #ff7047;
-        border-color: #ff7047;
+      .proof dd {
+        margin: 0.4rem 0 0;
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: -0.025em;
       }
 
+      /* ---------- sections ---------- */
       .section {
-        padding-block: 4.5rem;
-        border-top: 1px solid var(--line);
+        padding-block: 5rem;
       }
 
-      .section h2 {
-        font-size: 0.8125rem;
+      .head {
+        margin-bottom: 2.75rem;
+        max-width: 38rem;
+      }
+
+      .head h2 {
+        display: inline-block;
+        font-size: 0.75rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: var(--muted);
-        margin-bottom: 2.5rem;
+        font-weight: 700;
+        color: var(--grape);
+        background: var(--grape-soft);
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
       }
 
+      .head-lede {
+        margin: 1rem 0 0;
+        font-size: clamp(1.5rem, 3.5vw, 2rem);
+        line-height: 1.25;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .eyebrow {
+        margin: 0 0 0.75rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--bubble);
+      }
+
+      /* ---------- cards ---------- */
       .grid {
         display: grid;
-        gap: 1rem;
+        gap: 1.25rem;
         grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
       }
 
       .card {
-        background: var(--surface);
+        display: flex;
+        flex-direction: column;
+        background: var(--card);
         border: 1px solid var(--line);
-        border-radius: 12px;
-        padding: 1.75rem;
+        border-radius: var(--r-lg);
+        padding: 1.9rem;
+        box-shadow: var(--shadow-sm);
+        transition:
+          transform 0.2s ease-out,
+          box-shadow 0.2s ease-out;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .ico {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        margin-bottom: 1.35rem;
+        border-radius: var(--r-md);
+      }
+
+      .ico svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      .tint-grape .ico {
+        background: var(--grape-soft);
+        color: var(--grape);
+      }
+
+      .tint-mint .ico {
+        background: var(--mint-soft);
+        color: var(--mint);
+      }
+
+      .tint-bubble .ico {
+        background: var(--bubble-soft);
+        color: var(--bubble);
       }
 
       .card h3 {
-        font-size: 1.1875rem;
+        font-size: 1.25rem;
+        font-weight: 700;
       }
 
-      .card p {
+      .card > p {
+        margin: 0.75rem 0 0;
         color: var(--muted);
         font-size: 0.9375rem;
       }
 
       .card ul {
-        margin: 1.25rem 0 0;
-        padding: 0;
+        margin: 1.5rem 0 0;
+        padding: 1.25rem 0 0;
+        /* pin lists to a common baseline so cards read as a set */
+        margin-top: auto;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--line);
         list-style: none;
-        font-size: 0.875rem;
+        font-size: 0.9375rem;
         color: var(--muted);
       }
 
       .card li {
-        padding-left: 1.1rem;
         position: relative;
-        margin-bottom: 0.4rem;
+        padding-left: 1.35rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .card li:last-child {
+        margin-bottom: 0;
       }
 
       .card li::before {
@@ -327,46 +684,151 @@ const services = [
         position: absolute;
         left: 0;
         top: 0.62em;
-        width: 5px;
-        height: 5px;
+        width: 6px;
+        height: 6px;
         border-radius: 50%;
-        background: var(--accent);
       }
 
+      .tint-grape li::before {
+        background: var(--grape);
+      }
+
+      .tint-mint li::before {
+        background: var(--mint);
+      }
+
+      .tint-bubble li::before {
+        background: var(--bubble);
+      }
+
+      /* ---------- feature ---------- */
       .feature {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        padding: 2.5rem;
-        max-width: 42rem;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+        align-items: start;
+        background: var(--lemon-soft);
+        border: 1px solid #f3e3b4;
+        border-radius: var(--r-lg);
+        padding: 2.75rem;
       }
 
       .feature h3 {
-        font-size: 1.75rem;
+        font-size: 2rem;
+        font-weight: 800;
         margin-bottom: 1rem;
       }
 
       .feature p {
-        color: var(--muted);
+        color: #5c5230;
       }
 
-      .feature .btn {
-        margin-top: 1rem;
-      }
-
-      .muted {
+      .feature .muted {
         font-size: 0.875rem;
       }
 
-      .prose {
-        max-width: 38rem;
+      .feature .btn {
+        margin-top: 1.5rem;
+      }
+
+      .feature-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-tags li {
+        padding: 0.4rem 0.85rem;
+        background: rgba(255, 255, 255, 0.75);
+        border-radius: 999px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #5c5230;
+      }
+
+      /* ---------- process ---------- */
+      .steps {
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .steps li {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--r-lg);
+        padding: 1.9rem;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-bottom: 1.1rem;
+        border-radius: 50%;
+        background: var(--grape-soft);
+        color: var(--grape);
+        font-size: 0.875rem;
+        font-weight: 800;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .steps h3 {
+        font-size: 1.1875rem;
+        font-weight: 700;
+      }
+
+      .steps p {
+        margin: 0.75rem 0 0;
         color: var(--muted);
+        font-size: 0.9375rem;
+      }
+
+      /* ---------- about ---------- */
+      .prose {
+        max-width: 36rem;
+        color: var(--muted);
+        font-size: 1.0625rem;
+      }
+
+      .prose p:first-child {
+        margin-top: 0;
+      }
+
+      /* ---------- contact ---------- */
+      .contact {
+        padding-block: 2rem 5rem;
+      }
+
+      .contact-card {
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        padding: 4.5rem 1.5rem;
+        border-radius: var(--r-lg);
+        background: linear-gradient(135deg, #f3ecff, #ffeaf3 55%, #fff3cc);
+        border: 1px solid var(--line);
+      }
+
+      .contact-h {
+        font-size: clamp(2.25rem, 6vw, 3.5rem);
+        font-weight: 800;
       }
 
       .contact p {
+        margin: 1.25rem auto 2.5rem;
         color: var(--muted);
         max-width: 34rem;
-        margin-bottom: 2rem;
+        font-size: 1.1875rem;
       }
 
       footer {
@@ -376,7 +838,7 @@ const services = [
         flex-wrap: wrap;
         padding-block: 2.5rem;
         border-top: 1px solid var(--line);
-        font-size: 0.875rem;
+        font-size: 0.9375rem;
         color: var(--muted);
       }
 
@@ -385,13 +847,42 @@ const services = [
       }
 
       :focus-visible {
-        outline: 2px solid var(--accent);
+        outline: 3px solid var(--grape);
         outline-offset: 3px;
+        border-radius: 6px;
+      }
+
+      @media (max-width: 48rem) {
+        .feature {
+          grid-template-columns: 1fr;
+          padding: 1.9rem;
+        }
+
+        .hero {
+          padding-block: 3.5rem 3rem;
+        }
+
+        .section {
+          padding-block: 3.5rem;
+        }
+
+        .contact-card {
+          padding: 3rem 1.25rem;
+        }
+
+        nav {
+          gap: 1rem;
+          font-size: 0.875rem;
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
-        * {
-          transition: none !important;
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
         }
       }
     </style>
